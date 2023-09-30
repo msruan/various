@@ -1,0 +1,19 @@
+#!/bin/bash
+argumento=$1
+
+if [ "$argumento" == 'circle' ]; then
+	cd ~/catkin_ws/src/linux_course_files/move_bb8_pkg/src/
+	python move_bb8_circle.py
+elif [ "$argumento" == 'fb' ]; then
+	diretorio_atual=`pwd`
+	cd ~/catkin_ws/src/linux_course_files/move_bb8_pkg/src/
+	python move_bb8_forward_backward.py
+	cd diretorio_atual
+elif [ "$argumento" == 'square' ]; then
+	diretorio_atual=`pwd`
+	cd ~/catkin_ws/src/linux_course_files/move_bb8_pkg/my_scripts
+	python move_bb8_square.py
+else
+	echo "Do you forget? Type circle, fb or square to do somenthing"
+fi
+echo "FIM DO PROGRAMA"
